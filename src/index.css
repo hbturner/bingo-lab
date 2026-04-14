@@ -1,11 +1,14 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-accent: #2563eb;
-  --color-accent-light: #3b82f6;
-  --color-marked: #dcfce7;
-  --color-marked-border: #22c55e;
+  --color-accent: #ec4899;
+  --color-accent-light: #f472b6;
+  --color-marked: #fde68a;
+  --color-marked-border: #f97316;
   --color-bingo: #fbbf24;
+  --color-card: #fff7ed;
+  --color-board: #faf5ff;
+  --color-surface: #fff0f6;
 }
 
 html,
@@ -18,4 +21,40 @@ body {
   margin: 0;
   font-family: system-ui, -apple-system, sans-serif;
   -webkit-tap-highlight-color: transparent;
+  background: radial-gradient(circle at top left, rgba(236, 72, 153, 0.16), transparent 24%),
+    radial-gradient(circle at 85% 15%, rgba(234, 179, 8, 0.14), transparent 22%),
+    radial-gradient(circle at 25% 92%, rgba(168, 85, 247, 0.12), transparent 18%),
+    #fff0f6;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  opacity: 0.95;
+  animation: confetti-fall 1.5s ease-out infinite;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-10px) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(260px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes candy-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.02);
+  }
 }
